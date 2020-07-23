@@ -66,4 +66,4 @@ Vous pouvez également modifier la valeur de la propriété `title` utilisée da
 </body>
 ```
 
-* Depuis l'outil **Vue-DevTools**, modifier la valeur de la propriété `title`, vous constaterez que le rendu n'est pas modifiée sur la page HTML.
+* Depuis l'outil **Vue-DevTools**, modifier la valeur de la propriété `title`, vous constaterez que le rendu n'est pas modifié sur la page HTML.

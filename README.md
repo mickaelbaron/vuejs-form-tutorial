@@ -19,7 +19,7 @@ Il est possible d'utiliser d'autres navigateurs web, sauf que vous ne pourrez pa
 
 ## Présentation de l'étude de cas
 
-L'étude de cas utilisée dans cette série d'exercices est un formulaire d'inscription pour une conférence scientifique. Ce formulaire est disponible comme une page web intégrée au site web de la conférence scientifique. Seule, la page web du formulaire d'inscription est développée avec la bibliothèque [Vue.js](https://vuejs.org/), car c'est la seule page web qui contient un comportement dynamique. L'image ci-dessous montre l'apparence du formulaire.
+L'étude de cas utilisée dans cette série d'exercices est un formulaire d'inscription pour une conférence scientifique. Ce formulaire est disponible comme une page web intégrée à un site web d'une conférence scientifique. Seule, la page web du formulaire d'inscription est développée avec la bibliothèque [Vue.js](https://vuejs.org/), car c'est la seule page web qui contient un comportement dynamique. L'image ci-dessous montre l'apparence du formulaire.
 
 ![Formulaire d'inscription](./images/registration_form.png "Formulaire d'inscription")
 
