@@ -15,7 +15,7 @@ Avant de démarrer cette série d'exercices, veuillez préparer votre environnem
 * Éditeur de code [Visual Studio Code](https://code.visualstudio.com/) ;
 * Navigateur web [Firefox](https://www.mozilla.org/firefox/) ou [Chrome](https://www.google.com/chrome/browser/desktop/index.html).
 
-Il est possible d'utiliser d'autres navigateurs web, sauf que vous ne pourrez pas utiliser l'extension **Vue-DevTools** comme module intégré.
+Il est possible d'utiliser d'autres navigateurs web que [Firefox](https://www.mozilla.org/firefox/) ou [Chrome](https://www.google.com/chrome/browser/desktop/index.html), sauf que vous ne pourrez pas utiliser l'extension **Vue-DevTools** comme module intégré.
 
 ## Présentation de l'étude de cas
 

@@ -6,6 +6,7 @@ Ce troisième exercice s'intéresse à montrer comment réaliser un rendu de lis
 
 * Utiliser la directive `v-for`.
 * Utiliser la directive `v-on` et sa version simplifiée `@`.
+* Utiliser la directive `v-bind`.
 
 ## Étapes à suivre
 
@@ -44,8 +45,8 @@ Nous présentons ci-dessous les différentes syntaxes que vous pourrez retrouver
 
 ```html
 <!-- La source items est un tableau. items: [ { text: 'text1' }, { text: 'text2'} ] -->
-<div v-for="item in items">{{ item.text }}</div> --> item est l'élément courant (ex : yes)
-<div v-for="(item, index) in items"></div> --> item est l'élément courant (ex : yes) et index l'indice de l'élément (ex : 0)
+<div v-for="item in items">{{ item.text }}</div> --> item est l'élément courant (ex : text1)
+<div v-for="(item, index) in items"></div> --> item est l'élément courant (ex : text1) et index l'indice de l'élément (ex : 0)
 
 <!-- La source object est un objet. object: { prenom: 'mickael', familyname: 'baron' } -->
 <div v-for="val in object"></div> --> val est la valeur de la propriété (ex : mickael)
@@ -62,8 +63,10 @@ Nous présentons ci-dessous les différentes syntaxes que vous pourrez retrouver
         <legend class="col-form-label col-sm-2 pt-0">Inscription*</legend>
         <div class="col-sm-10">
             <div class="form-check" v-for="val in feesConfig">
-                <input class="form-check-input" type="radio" name="feesRadios" v-model="fees">
-                <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="feesRadios"
+                    v-bind:id="'feesradios'+val.type" v-bind:value="val" v-model="fees"
+                    v-bind:disabled="validated">
+                <label class="form-check-label" v-bind:for="'feesradios'+val.value">
                     {{ val.text }} ({{ val.price }} EUR)
                 </label>
             </div>
@@ -72,9 +75,7 @@ Nous présentons ci-dessous les différentes syntaxes que vous pourrez retrouver
 </fieldset>
 ```
 
-Une itération est réalisée sur l'ensemble des éléments du tableau de `feesConfig`. Seule la valeur `val` est intéressante dans notre cas. L'index n'est pas utilisé. Une liaison bidirectionnelle est réalisée entre la propriété `fees` et le bouton à sélectionner (`radiobutton`) en utilisant la directive `v-model` (voir exercice 1).
-
-TODO : cela ne fonctionne pas car il manque l'attribut value et id et for. Utilisation de v-bind.
+Une itération est réalisée sur l'ensemble des éléments du tableau de `feesConfig`. Seule la valeur `val` est intéressante dans notre cas. L'index n'est pas utilisé. Une liaison bidirectionnelle est réalisée entre la propriété `fees` et le bouton à sélectionner (`radiobutton`) en utilisant la directive `v-model` (voir exercice 1). Pour modifier les valeurs des attributs `id`, `value`, `disabled` de la balise `<input>` ainsi que l'attribut `for` de la balise `<label>`, la directive `v-bind` est utilisée. Cette balise permet de lier un attribut d’une balise à une expression.
 
 * Sur le même principe que précédemment, éditer le fichier _index.html_ au niveau de l'information `<!-- Lodging -->` en utilisant la directive `v-for` pour effectuer un rendu de liste sur les différents modes d'hébergement.
 
@@ -90,6 +91,8 @@ La directive `v-on` permet d'attacher un écouteur d'événements à un élémen
         <h1 v-once>Formulaire d'inscription pour {{ title }}</h1>
         <form @submit="checkForm" method="post">
 ```
+
+> le passage de paramètre à la méthode `checkForm` est implicite. Sous cette forme, l'objet événement (`event`) qui contient les informations de l'interaction sera passé automatiquement. Si vous souhaitez passer d'autres paramètres en plus de l'objet événement, vous devrez passer par un passage explicite via cette forme d'écriture `<form @submit="checkForm($event)" method="post">`.
 
 * Éditer le fichier _index.js_ pour ajouter les méthodes `checkForm` et `validEmail` puis les propriétés `errors` et `validated`.
 
@@ -169,13 +172,29 @@ var app = new Vue({
 });
 ```
 
+* Afin de vous assurer que le tableau `errors` est modifié si des informations sont manquantes, nous allons ré-utiliser l'outil **Vue-DevTools** (voir exercice 2) pour examiner le contenu de la propriété `errors`. Ne pas renseigner d'information pour les champs type d'inscription et mode d'hébergement et cliquer sur la bouton **Pré-valider**. La propriété devrait se mettre à jour et contenir deux éléments comme précisé sur la figure ci-dessous.
+
+![Outil Vue-DevTools](./images/exercice3_vue-devtools.png "Outil Vue-DevTools")
+
 ## Avez-vous bien compris, valider vos compétences ? 
 
-Pour valider vos compétences, il reste encore quelques développements à réaliser pour terminer cet exercice.
+Pour valider vos compétences sur les directives étudiées dans cet exercice (`v-for`, `v-on` et `v-bind`), des développements restent encore à réaliser.
 
-* Boucle pour afficher l'ensemble des erreurs dans la zone des erreurs
+* Effectuer un rendu de liste pour l'affichage des erreurs situé au niveau de la balise `<b>Corrigez les erreurs suivantes : </b>`.
 
-* La gestion des écouteurs pour les boutons Confirmer et Modifier les données (donner le code JavaScript)
+* Réaliser la gestion des écouteurs pour les boutons **Modifier** et **Confirmer**. Lors de l'action à **Modifier**, vous changerez l'état de la propriété `validated` à `false`. Enfin, lors de l'action à **Confirmer**, vous pourrez afficher le contenu des données du formulaire en appelant la méthode `confirm()` dont le code est donné ci-dessous.
 
-* Lier l'attribut disabled de chaque zone de saisie à la propriété disabled
+```JavaScript
+confirm() {
+    let resultObject = {
+        email: this.email, firstname: this.firstName, familyname: this.familyName,
+        sexe: this.sexe, institution: this.institution, address: this.address,
+        zipcode: this.zipCode, city: this.city, country: this.country, webpage: this.webpage,
+        institutionwebpage: this.institutionwebpage, fees: this.fees.value, lodging: this.lodging.value
+    }
 
+    console.log(resultObject);
+}
+```
+
+* Lier l'attribut `disabled` de chaque zone de saisie à la propriété `disabled` en utilisant la directive `v-bind` (exemple : `v-bind:disabled="validated"`).

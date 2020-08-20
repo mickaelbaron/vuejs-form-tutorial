@@ -9,7 +9,7 @@ Ce deuxième exercice s'intéresse à créer des liaisons bidirectionnelles entr
 
 ## Étapes à suivre
 
-* Éditer le contenu du fichier _index.js_ en ajoutant treize propriétés correspondant respectivement aux zones de saisies suivantes : email, prénom, nom, sexe, institution, adresse, code postal, ville, pays, page web, page web de l'institution, type d'inscription et mode d'hébergement. Vous respecterez la convention de nommage **CamelCase** (les mots sont liés sans espace. Chaque mot commence par une majuscule à l’exception du premier) et l'usage de l'anglais. Afin de faciliter le développement, vous initialiserez les propriétés avec des valeurs par défaut. Un exemple est donné ci-dessous pour la propriété `email`.
+* Éditer le contenu du fichier _index.js_ en ajoutant treize propriétés correspondant respectivement aux zones de saisies suivantes : email, prénom, nom, sexe, institution, adresse, code postal, ville, pays, page web, page web de l'institution, type d'inscription et mode d'hébergement. Vous respecterez la convention de nommage **CamelCase** (les mots sont liés sans espace et chaque mot commence par une majuscule à l’exception du premier) et l'usage de l'anglais. Afin de faciliter le développement, vous initialiserez les propriétés avec des valeurs par défaut. Un exemple est donné ci-dessous pour la propriété `email`.
 
 ```JavaScript
 var app = new Vue({
@@ -31,13 +31,13 @@ var app = new Vue({
 
 ```html
 ...
-            <!-- Email -->
-            <div class="form-group row">
-                <label for="inputEmail" class="col-sm-2 col-form-label">Email*</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputEmail" placeholder="Email" v-model="email">
-                </div>
-            </div>
+<!-- Email -->
+<div class="form-group row">
+    <label for="inputEmail" class="col-sm-2 col-form-label">Email*</label>
+    <div class="col-sm-10">
+        <input type="email" class="form-control" id="inputEmail" placeholder="Email" v-model="email">
+    </div>
+</div>
 ...
 ```
 
