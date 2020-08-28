@@ -64,8 +64,7 @@ Nous présentons ci-dessous les différentes syntaxes que vous pourrez retrouver
         <div class="col-sm-10">
             <div class="form-check" v-for="val in feesConfig">
                 <input class="form-check-input" type="radio" name="feesRadios"
-                    v-bind:id="'feesradios'+val.type" v-bind:value="val" v-model="fees"
-                    v-bind:disabled="validated">
+                    v-bind:id="'feesradios'+val.type" v-bind:value="val" v-model="fees">
                 <label class="form-check-label" v-bind:for="'feesradios'+val.value">
                     {{ val.text }} ({{ val.price }} EUR)
                 </label>
@@ -75,7 +74,7 @@ Nous présentons ci-dessous les différentes syntaxes que vous pourrez retrouver
 </fieldset>
 ```
 
-Une itération est réalisée sur l'ensemble des éléments du tableau de `feesConfig`. Seule la valeur `val` est intéressante dans notre cas. L'index n'est pas utilisé. Une liaison bidirectionnelle est réalisée entre la propriété `fees` et le bouton à sélectionner (`radiobutton`) en utilisant la directive `v-model` (voir exercice 1). Pour modifier les valeurs des attributs `id`, `value`, `disabled` de la balise `<input>` ainsi que l'attribut `for` de la balise `<label>`, la directive `v-bind` est utilisée. Cette balise permet de lier un attribut d’une balise à une expression.
+Une itération est réalisée sur l'ensemble des éléments du tableau de `feesConfig`. Seule la valeur `val` est intéressante dans notre cas. L'index n'est pas utilisé. Une liaison bidirectionnelle est réalisée entre la propriété `fees` et le bouton à sélectionner (`radiobutton`) en utilisant la directive `v-model` (voir exercice 1). Pour modifier les valeurs des attributs `id` et `value` de la balise `<input>` ainsi que l'attribut `for` de la balise `<label>`, la directive `v-bind` est utilisée. Cette directive permet de lier un attribut d’une balise à une expression.
 
 * Sur le même principe que précédemment, éditer le fichier _index.html_ au niveau de l'information `<!-- Lodging -->` en utilisant la directive `v-for` pour effectuer un rendu de liste sur les différents modes d'hébergement.
 
@@ -197,4 +196,5 @@ confirm() {
 }
 ```
 
-* Lier l'attribut `disabled` de chaque zone de saisie à la propriété `disabled` en utilisant la directive `v-bind` (exemple : `v-bind:disabled="validated"`).
+* Lier l'attribut `disabled` au niveau de la balise englobante `<fieldset>` à la propriété `disabled` en utilisant la directive `v-bind`. Lorsque cet attribut sera à `disabled`, tous les composants contrôles enfants seront désactivés.
+
