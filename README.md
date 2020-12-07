@@ -43,5 +43,5 @@ Retrouver les autres tutoriels :
 
 Pour aller plus loin, vous pouvez consulter les ressources suivantes :
 
-* [Introduction au développement web avec des composants](https://mickael-baron.fr/web/intro-developpement-web-composant)
-* [Introduction au développement Web avec Vue.js](https://mickael-baron.fr/web/intro-vuejs)
+* [Introduction au développement web avec des composants](https://mickael-baron.fr/web/intro-developpement-web-composant) ;
+* [Introduction au développement Web avec Vue.js](https://mickael-baron.fr/web/intro-vuejs).
