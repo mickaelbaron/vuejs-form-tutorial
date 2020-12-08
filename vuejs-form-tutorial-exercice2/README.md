@@ -9,7 +9,7 @@ Ce deuxième exercice s'intéresse à créer des liaisons bidirectionnelles entr
 
 ## Étapes à suivre
 
-* Éditer le contenu du fichier _index.js_ en ajoutant treize propriétés correspondant respectivement aux zones de saisies suivantes : email, prénom, nom, sexe, institution, adresse, code postal, ville, pays, page web, page web de l'institution, type d'inscription et mode d'hébergement. Vous respecterez la convention de nommage **CamelCase** (les mots sont liés sans espace et chaque mot commence par une majuscule à l’exception du premier) et l'usage de l'anglais. Afin de faciliter le développement, vous initialiserez les propriétés avec des valeurs par défaut. Un exemple est donné ci-dessous pour la propriété `email`.
+* Éditer le contenu du fichier _index.js_ en ajoutant treize propriétés correspondant respectivement aux zones de saisies suivantes : email, prénom, nom, sexe, institution, adresse, code postal, ville, pays, page web, page web de l'institution, type d'inscription et mode d'hébergement. Vous respecterez la convention de nommage **CamelCase** (les mots sont liés sans espace et chaque mot commence par une majuscule à l’exception du premier) et l'usage de l'anglais. Afin de faciliter le développement, vous initialiserez les propriétés avec des valeurs par défaut.
 
 ```JavaScript
 var app = new Vue({
@@ -19,6 +19,18 @@ var app = new Vue({
         // Les propriétés
         title: "#MaConf2020",
         email: 'baron@ensma.fr',
+        firstName: 'Mickael',
+        familyName: 'BARON',
+        sexe: 'male',
+        institution: 'ISAE-ENSMA',
+        address: 'Téléport 2 - 1 avenue Clément Ader, BP 40109',
+        zipCode: '86961',
+        city: 'Futuroscope Chasseneuil',
+        country: 'France',
+        webpage: 'https://mickael-baron.fr',
+        institutionwebpage: 'https://www.lias-lab.fr/members/mickaelbaron',
+        fees: null,
+        lodging: null
         ...
     },
     methods: {

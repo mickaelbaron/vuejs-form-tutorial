@@ -6,7 +6,7 @@ Ce troisième exercice s'intéresse à montrer comment réaliser un rendu de lis
 
 * Utiliser la directive `v-for`.
 * Utiliser la directive `v-on` et sa version simplifiée `@`.
-* Utiliser la directive `v-bind`.
+* Utiliser la directive `v-bind` et sa version simplifiée `:`.
 
 ## Étapes à suivre
 
@@ -54,7 +54,7 @@ Nous présentons ci-dessous les différentes syntaxes que vous pourrez retrouver
 <div v-for="(val, key, index) in object"></div> --> val est la valeur de la propriété (ex : mickael), key le nom de la propriété (ex : prenom) et index l'indice de la propriété (ex : 0)
 ```
 
-* Éditer le fichier _index.html_ au niveau de l'information `<!-- Fees -->` en utilisant la directive `v-for` pour effectuer un rendu de liste sur les différents type d'inscription. La source dans ce cas est un tableau.
+* Éditer le fichier _index.html_ au niveau de l'information `<!-- Fees -->` en utilisant la directive `v-for` et sa syntaxte simplifiée `:` pour effectuer un rendu de liste sur les différents type d'inscription. La source dans ce cas est un tableau.
 
 ```html
 <!-- Fees -->
@@ -64,8 +64,8 @@ Nous présentons ci-dessous les différentes syntaxes que vous pourrez retrouver
         <div class="col-sm-10">
             <div class="form-check" v-for="val in feesConfig">
                 <input class="form-check-input" type="radio" name="feesRadios"
-                    v-bind:id="'feesradios'+val.type" v-bind:value="val" v-model="fees">
-                <label class="form-check-label" v-bind:for="'feesradios'+val.value">
+                    v-bind:id="'feesradios'+val.value" v-bind:value="val.value" v-model="fees">
+                <label class="form-check-label" :for="'feesradios'+val.value">
                     {{ val.text }} ({{ val.price }} EUR)
                 </label>
             </div>
@@ -88,10 +88,12 @@ La directive `v-on` permet d'attacher un écouteur d'événements à un élémen
 <body>
     <div id="app" class="container">
         <h1 v-once>Formulaire d'inscription pour {{ title }}</h1>
-        <form @submit="checkForm" method="post">
+        <form @submit.prevent="checkForm" method="post">
 ```
 
-> le passage de paramètre à la méthode `checkForm` est implicite. Sous cette forme, l'objet événement (`event`) qui contient les informations de l'interaction sera passé automatiquement. Si vous souhaitez passer d'autres paramètres en plus de l'objet événement, vous devrez passer par un passage explicite via cette forme d'écriture `<form @submit="checkForm($event)" method="post">`.
+> le passage de paramètre à la méthode `checkForm` est implicite. Sous cette forme, l'objet événement (`event`) qui contient les informations de l'interaction sera passé automatiquement. Si vous souhaitez passer d'autres paramètres en plus de l'objet événement, vous devrez passer par un passage explicite via cette forme d'écriture `<form @submit.prevent="checkForm($event)" method="post">`.
+
+> le modificateur d'événements `prevent` permet de stopper le rechargement de la page.
 
 * Éditer le fichier _index.js_ pour ajouter les méthodes `checkForm` et `validEmail` puis les propriétés `errors` et `validated`.
 
@@ -106,7 +108,7 @@ var app = new Vue({
         ...
     },
     methods: {
-         checkForm(e) {
+         checkForm() {
             this.errors = [];
 
             if (!this.email) {
@@ -160,8 +162,6 @@ var app = new Vue({
             } else {
                 this.validated = false;
             }
-
-            e.preventDefault();
         },
         validEmail(email) {
             var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;

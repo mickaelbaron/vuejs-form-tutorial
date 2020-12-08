@@ -18,22 +18,17 @@ Ce formulaire d'inscription affiche trois zones distinctes, à savoir : la zone 
 
 * Démarrer l'éditeur de code [Visual Studio Code](https://code.visualstudio.com/) et éditer le contenu du fichier _index.html_. Vous remarquerez le code HTML et les classes et sélecteurs CSS spécifiques à [Bootstrap](https://getbootstrap.com/) (exemple : `class="form-group row"`).
 
-* Pour ajouter une dépendance vers la bibliothèque [Vue.js](https://vuejs.org/), ajouter dans la balise `<head>` le lien CDN suivant : https://cdn.jsdelivr.net/npm/vue/dist/vue.js.
+* Pour ajouter une dépendance vers la bibliothèque [Vue.js](https://vuejs.org/), ajouter en dernière instruction de la balise `<body>` le lien CDN suivant : https://cdn.jsdelivr.net/npm/vue/dist/vue.js.
 
 > Ce lien CDN fournit la dernière version courante de [Vue.js](https://vuejs.org/), si vous desirez utiliser une version spécifique, veuillez vous rendre sur le site de [JSDELIVR](https://www.jsdelivr.com/package/npm/vue).
 
 ```html
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+<body>
+    <div id="app" class="container">
+        ...
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-</head>
+</body>
 ```
 
 * Afin de dissocier les codes spécifiques de la présentation (HTML) et du comportement (JavaScript), créer un nouveau fichier appelé _index.js_ au même niveau que le fichier _index.html_. Ce fichier contiendra tous les codes JavaScript pour [Vue.js](https://vuejs.org/).
@@ -79,6 +74,7 @@ Cet objet contient trois informations.
     <div id="app" class="container">
         ...
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="index.js"></script>
 </body>
 ```
