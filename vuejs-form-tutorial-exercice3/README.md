@@ -64,7 +64,7 @@ Nous présentons ci-dessous les différentes syntaxes que vous pourrez retrouver
         <div class="col-sm-10">
             <div class="form-check" v-for="val in feesConfig">
                 <input class="form-check-input" type="radio" name="feesRadios"
-                    v-bind:id="'feesradios'+val.type" v-bind:value="val" v-model="fees">
+                    v-bind:id="'feesradios'+val.value" v-bind:value="val.value" v-model="fees">
                 <label class="form-check-label" v-bind:for="'feesradios'+val.value">
                     {{ val.text }} ({{ val.price }} EUR)
                 </label>
