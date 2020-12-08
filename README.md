@@ -1,4 +1,4 @@
-# Tutoriel Vue.js : intégration de la biliothèque dans un site web existant
+# Tutoriel Vue.js : intégration de la bibliothèque dans un site web existant
 
 L'objectif de cette série d'exercices est d'apprendre à utiliser [Vue.js](https://vuejs.org/) comme une bibliothèque dans un site web existant. Nous allons nous focaliser principalement sur la manipulation des directives proposées par [Vue.js](https://vuejs.org/).
 
