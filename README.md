@@ -4,7 +4,7 @@ L'objectif de cette série d'exercices est d'apprendre à utiliser [Vue.js](http
 
 Une grande partie du code HTML et JavaScript vous sera donnée comme support dans le répertoire _workspace_. 
 
-[Vue.js](https://vuejs.org/) 3 a été utilisée pour cette série d'exercices. Cette série d'exercices est également disponible pour la version [Vue.js](https://vuejs.org/) 2 : TO COMPLETE.
+[Vue.js](https://vuejs.org/) 3 a été utilisée pour cette série d'exercices. Cette série d'exercices est également disponible pour la version [Vue.js](https://vuejs.org/) 2 : [Branch Vue.js 2](https://github.com/mickaelbaron/vuejs-form-tutorial/tree/vuejs2).
 
 **Buts pédagogiques** : référencer la bibliothèque [Vue.js](https://vuejs.org/), interpolation de texte, écriture moustache `{{ }}`, directives `v-text`, `v-model`, `v-once`, `v-for`, `v-bind`, `v-on`, `v-show` et `v-if`, manipulation de propriétés et utilisation de l'outil **Vue-DevTools** pour analyser l'état de ces propriétés.
 
