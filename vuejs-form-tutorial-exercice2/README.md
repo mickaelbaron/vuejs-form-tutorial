@@ -9,34 +9,33 @@ Ce deuxième exercice s'intéresse à créer des liaisons bidirectionnelles entr
 
 ## Étapes à suivre
 
-* Éditer le contenu du fichier _index.js_ en ajoutant treize propriétés correspondant respectivement aux zones de saisies suivantes : email, prénom, nom, sexe, institution, adresse, code postal, ville, pays, page web, page web de l'institution, type d'inscription et mode d'hébergement. Vous respecterez la convention de nommage **CamelCase** (les mots sont liés sans espace et chaque mot commence par une majuscule à l’exception du premier) et l'usage de l'anglais. Afin de faciliter le développement, vous initialiserez les propriétés avec des valeurs par défaut.
+* Éditer le contenu du fichier _index.js_ en ajoutant une propriété réactive `registration` initialisée comme `reactive`. Cette proprité `registration` définit un objet de treize propriétés correspondant respectivement aux zones de saisies suivantes : email, prénom, nom, sexe, institution, adresse, code postal, ville, pays, page web, page web de l'institution, type d'inscription et mode d'hébergement. Vous respecterez la convention de nommage **CamelCase** (les mots sont liés sans espace et chaque mot commence par une majuscule à l’exception du premier) et l'usage de l'anglais. Afin de faciliter le développement, vous initialiserez les propriétés avec des valeurs par défaut.
 
 ```JavaScript
-var app = new Vue({
-    el: '#app',
+const { createApp, ref, reactive } = Vue
 
-    data: {
-        // Les propriétés
-        title: "#MaConf2020",
-        email: 'baron@ensma.fr',
-        firstName: 'Mickael',
-        familyName: 'BARON',
-        sexe: 'male',
-        institution: 'ISAE-ENSMA',
-        address: 'Téléport 2 - 1 avenue Clément Ader, BP 40109',
-        zipCode: '86961',
-        city: 'Futuroscope Chasseneuil',
-        country: 'France',
-        webpage: 'https://mickael-baron.fr',
-        institutionwebpage: 'https://www.lias-lab.fr/members/mickaelbaron',
-        fees: null,
-        lodging: null
-        ...
-    },
-    methods: {
-        // Les méthodes
+createApp({
+    setup() {
+        const title = ref('#MaConf2020')
+        const registration = reactive(
+            {
+                email: 'baron@ensma.fr',
+                firstName: 'Mickael',
+                familyName: 'BARON',
+                sexe: 'female',
+                institution: 'ISAE-ENSMA',
+                address: 'Téléport 2 - 1 avenue Clément Ader, BP 40109',
+                zipCode: '86961',
+                city: 'Futuroscope Chasseneuil',
+                country: 'France',
+                webpage: 'https://mickael-baron.fr',
+                institutionwebpage: 'https://www.lias-lab.fr/members/mickaelbaron',
+                fees: null,
+                lodging: null
+            }
+        )
     }
-});
+}).mount('#app');
 ```
 
 * Éditer le contenu du fichier _index.html_ en utilisant la directive `v-model` pour créer des liaisons bidirectionnelles pour chaque propriété définie précédemment. Pour l'instant, ne vous occupez pas de réaliser la liaison bidirectionnelle pour les propriétés liées au type d'inscription et du mode d'hébergement. À titre d'exemple, nous donnons le code correspondant à la laison entre la propriété `email` et une zone de saisie de type email.
@@ -44,11 +43,10 @@ var app = new Vue({
 ```html
 ...
 <!-- Email -->
-<div class="form-group row">
-    <label for="inputEmail" class="col-sm-2 col-form-label">Email*</label>
-    <div class="col-sm-10">
-        <input type="email" class="form-control" id="inputEmail" placeholder="Email" v-model="email">
-    </div>
+<div class="col-12">
+    <label for="inputEmail" class="form-label">Email address*</label>
+    <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp"
+        v-model="registration.email">
 </div>
 ...
 ```
@@ -70,10 +68,12 @@ Vous pouvez également modifier la valeur de la propriété `title` utilisée da
 ```html
 ...
 <body>
+    <script src="https://unpkg.com/vue@3"></script>
     <div id="app" class="container">
-        <h1 v-once>Formulaire d'inscription pour {{ title }}</h1>
-        ...
-    </div>
+        <main>
+            <div class="py-5">
+                <h2 v-once>Inscription pour {{ title }}</h2>
+            </div>
     ...
 </body>
 ```

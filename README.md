@@ -4,6 +4,8 @@ L'objectif de cette série d'exercices est d'apprendre à utiliser [Vue.js](http
 
 Une grande partie du code HTML et JavaScript vous sera donnée comme support dans le répertoire _workspace_. 
 
+[Vue.js](https://vuejs.org/) 3 a été utilisée pour cette série d'exercices. Cette série d'exercices est également disponible pour la version [Vue.js](https://vuejs.org/) 2 : TO COMPLETE.
+
 **Buts pédagogiques** : référencer la bibliothèque [Vue.js](https://vuejs.org/), interpolation de texte, écriture moustache `{{ }}`, directives `v-text`, `v-model`, `v-once`, `v-for`, `v-bind`, `v-on`, `v-show` et `v-if`, manipulation de propriétés et utilisation de l'outil **Vue-DevTools** pour analyser l'état de ces propriétés.
 
 > Ce dépôt est utilisé dans le cadre d'un cours sur le développement d'applications web que je dispense  en français à l'[ISAE-ENSMA](https://www.ensma.fr) pour les étudiants en dernière année du cycle d'ingénieur qui suivent l'option informatique. Tous les supports de cours et tutoriaux sont disponibles sur ma page Developpez.com : [https://mbaron.developpez.com](https://mbaron.developpez.com/#page_web) et sur ma page personnelle : [https://mickael-baron.fr/](https://mickael-baron.fr/).
@@ -27,7 +29,7 @@ Le formulaire contient un ensemble de zones de saisie libres pour renseigner l'e
 
 ![Formulaire d'inscription avec des informations manquantes](./images/registration_form_with_errors.png "Formulaire d'inscription avec des informations manquantes")
 
-L'affichage des erreurs est constitué d'une liste d'éléments pour chaque information obligatoire manquante. Un contrôle plus stricte est réalisé en plus sur l'email pour s'assurer qu'elle est renseignée et qu'elle est valide syntaxiquement. Si toutes les informations sont valides, un récapitulatif de l'inscription est affiché dans une zone située après le bouton  **Pré-valider** comme montré sur la figure ci-dessous.
+L'affichage des erreurs est constitué d'une liste d'éléments pour chaque information obligatoire manquante. Un contrôle plus stricte est réalisé en plus sur l'adresse email pour s'assurer qu'elle est renseignée et qu'elle est valide syntaxiquement. Si toutes les informations sont valides, un récapitulatif de l'inscription est affiché dans une zone située après le bouton  **Pré-valider** comme montré sur la figure ci-dessous.
 
 ![Récapitulatif de l'inscription](./images/checked_registration_form.png "Récapitulatif de l'inscription")
 

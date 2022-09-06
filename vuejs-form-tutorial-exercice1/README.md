@@ -16,50 +16,49 @@ Ce premier exercice propose d'afficher le formulaire d'inscription HTML, d'expli
 
 Ce formulaire d'inscription affiche trois zones distinctes, à savoir : la zone d'erreur, la zone de saisie et la zone de récapitulatif de l'inscription. Quand nous aurons inclus et configuré [Vue.js](https://vuejs.org/), les zones d'erreur et de récapitulatif de l'inscription s'afficheront sous certaines conditions. Par ailleurs, l'apparence graphique est réalisée par la bibliothèque CSS [Bootstrap](https://getbootstrap.com/).
 
-* Démarrer l'éditeur de code [Visual Studio Code](https://code.visualstudio.com/) et éditer le contenu du fichier _index.html_. Vous remarquerez le code HTML et les classes et sélecteurs CSS spécifiques à [Bootstrap](https://getbootstrap.com/) (exemple : `class="form-group row"`).
+* Démarrer l'éditeur de code [Visual Studio Code](https://code.visualstudio.com/) et éditer le contenu du fichier _index.html_. Vous remarquerez le code HTML et les classes et sélecteurs CSS spécifiques à [Bootstrap](https://getbootstrap.com/) (exemple : `class="row g-3"`).
 
-* Pour ajouter une dépendance vers la bibliothèque [Vue.js](https://vuejs.org/), ajouter en dernière instruction de la balise `<body>` le lien CDN suivant : https://cdn.jsdelivr.net/npm/vue/dist/vue.js.
+* Pour ajouter une dépendance vers la bibliothèque [Vue.js](https://vuejs.org/), ajouter en dernière instruction de la balise `<body>` le lien suivant : https://unpkg.com/vue@3.
 
-> Ce lien CDN fournit la dernière version courante de [Vue.js](https://vuejs.org/), si vous desirez utiliser une version spécifique, veuillez vous rendre sur le site de [JSDELIVR](https://www.jsdelivr.com/package/npm/vue).
+> Ce lien fournit la dernière version courante de [Vue.js](https://vuejs.org/) (si vous desirez utiliser une version spécifique, veuillez vous rendre sur le site de [jsdelivr](https://www.jsdelivr.com/package/npm/vue)).
 
 ```html
 <body>
-    <div id="app" class="container">
+    <script src="https://unpkg.com/vue@3"></script>
+    <div class="container">
         ...
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </body>
 ```
 
 * Afin de dissocier les codes spécifiques de la présentation (HTML) et du comportement (JavaScript), créer un nouveau fichier appelé _index.js_ au même niveau que le fichier _index.html_. Ce fichier contiendra tous les codes JavaScript pour [Vue.js](https://vuejs.org/).
 
-* Éditer le fichier _index.js_ avec le code donné ci-dessous pour créer un objet `Vue`.
+* Créer un fichier _index.js_ avec le code donné ci-dessous pour créer un objet `createApp`.
 
 ```JavaScript
-var app = new Vue({
-    el: '#app',
+const { createApp, ref } = Vue
 
-    data: {
-        // Les propriétés
-        title: "#MaConf2020"
-    },
-    methods: {
-        // Les méthodes
+createApp({
+    setup() {
+        const title = ref('#MaConf2020')
+
+        return { title }
     }
-});
+}).mount('#app');
 ```
 
-Cet objet contient trois informations.
+Cet extrait de code contient trois informations.
 
-1. L'attribut `el` permet d'indiquer l'élément HTML sur lequel l'objet `Vue` peut s'attacher. Dans ce cas, l'objet `Vue` s'attend à trouver un élément avec l'identifiant (`id`) à `app`.
-2. La définition des propriétés (`data`) qui serviront à stocker les informations du formulaire d'inscription. On propose pour l'instant la propriété `title` qui servira à nommer le formulaire d'inscription.
-3. Des fonctions utilitaires (`methods`) qui serviront à effectuer des opérations complexes sur les propriétés.
+1. L'importation de la fonction `createApp` depuis l'objet `Vue`.
+2. Le contenu de la fonction `createApp` où seront déclarées les propriétés réactives (`title`) et les fonctions à appeler depuis le formulaire d'inscription.
+3. L'élément HTML (`app`) sur lequel l'instance [Vue.js](https://vuejs.org/) peut s'attacher. Dans ce cas, l'objet `Vue` s'attend à trouver un élément avec l'identifiant (`id`) à `app`.
 
 * Modifier le code du fichier _index.html_ afin d'ajouter l'identifiant `app` pour attacher l'objet `Vue`.
 
 ```html
 ...
 <body>
+    <script src="https://unpkg.com/vue@3"></script>
     <div id="app" class="container">
         ...
     </div>
@@ -71,10 +70,10 @@ Cet objet contient trois informations.
 ```html
 ...
 <body>
+    <script src="https://unpkg.com/vue@3"></script>
     <div id="app" class="container">
         ...
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="index.js"></script>
 </body>
 ```

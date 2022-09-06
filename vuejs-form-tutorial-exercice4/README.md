@@ -15,32 +15,41 @@ Nous allons vouloir afficher la zone d'erreurs, celle qui liste les champs de sa
 * Éditer le fichier _index.html_ pour ajouter la directive `v-show` au niveau de la zone d'erreurs.
 
 ```html
-<div v-show="errors.length">
-    <b>Corrigez les erreurs suivantes : </b>
-    <ul>
-        <li v-for="error in errors">{{ error }}</li>
-    </ul>
-</div>
-```
+<div class="card mb-3" v-show="errors.length">
+    <div class="card-header">
+        Corrigez les erreurs suivantes
+    </div>
+    <div class="card-body">
+        <ul>
+            <li v-for="error in errors">{{ error }}</li>
+        </ul>
+    </div>
+</div>```
 
 L'expression contenue dans la directive retourne vraie quand la taille du tableau n'est pas vide. Quoi qu'il en soit, le rendu de l'élément `<div>` est réalisé, mais sera masqué par une permutation CSS. Nous allons examiner cela par une petite expérimentation.
 
 * Faites en sorte de remplir tous les champs de saisie afin de ne pas avoir d'erreur et afficher ensuite le contenu HTML de la page pour examiner le rendu obtenu.
 
 ```html
-<div style="display: none;">
-    <b>Corrigez les erreurs suivantes : </b> 
-    <ul></ul>
+<div class="card mb-3" style="display: none;">
+    <div class="card-header">Corrigez les erreurs suivantes</div>
+    <div class="card-body">
+        <ul></ul>
+    </div>
 </div>
 ```
 
 * Réaliser l'opération inverse en faisant en sorte d'obtenir au moins une erreur et afficher ensuite le contenu HTML de la page pour examiner le rendu obtenu.
 
 ```html
-<div style="">
-    <b>Corrigez les erreurs suivantes : </b> 
-    <ul><li>Formule d'inscription obligatoire.</li>
-    <li>Moyen d'hébergement obligatoire.</li></ul>
+<div class="card mb-3" style="">
+    <div class="card-header"> Corrigez les erreurs suivantes </div>
+    <div class="card-body">
+        <ul>
+            <li>Formule d'inscription obligatoire</li>
+            <li>Moyen d'hébergement obligatoire</li>
+        </ul>
+    </div>
 </div>
 ```
 
@@ -51,37 +60,37 @@ Nous allons maintenant afficher la zone de récapitulatif de l'inscription en ut
 * Éditer le fichier _index.html_ pour ajouter la directive `v-if` au niveau de la zone de récapitulatif de l'inscription. L'expression s'appuiera sur la propriété `validated`.
 
 ```html
-<div class="card">
+<div class="card mt-3" v-if="validated">
     <div class="card-header">
         Récapitulatif de l'inscription
     </div>
     <div class="card-body">
-        <blockquote class="blockquote mb-0">
-            <p>Bonjour, vous
-                avez procédé à une inscription pour la conférence.</p>
-            <p>Le détail de votre enregistrement est le suivant : </p>
-            <ul>
-                <li>EUR</li>
-                <li>EUR</li>
-            </ul>
-            <p>Le montant total est de EUR.</p>
+        <p>Bonjour, vous 
+            avez procédé à une inscription pour la conférence.</p>
+        <p>Le détail de votre enregistrement est le suivant : </p>
+        <ul>
+            <li>EUR</li>
 
-            <p>Un email vous sera envoyé prochainement à cette adresse pour la mise en paiement de
-                votre inscription. Merci de consulter votre messagerie et de répondre dés réception du message.
-            </p>
-            <p>En vous remerciant de votre inscription, à très bientôt pour .</p>
+            <li>EUR</li>
+        </ul>
+        <p>Le montant total est de EUR.</p>
 
-            <button type="button" v-on:click="confirm()" class="btn btn-primary">Confirmer</button>
-            <button type="button" v-on:click="validated = false" class="btn btn-primary">Modifier les
-                données</button>
-        </blockquote>
+        <p>Un email vous sera envoyé prochainement à cette adresse pour la mise en paiement de
+            votre inscription. Merci de consulter votre messagerie et de procéder au réglement de votre
+            inscription.
+        </p>
+        <p>En vous remerciant de votre inscription, à très bientôt à la conférence.</p>
+
+        <button type="button" v-on:click="confirm" class="m-1 btn btn-primary">Confirmer</button>
+        <button type="button" v-on:click="validated = false" class="btn btn-primary">Modifier les
+            données</button>
     </div>
 </div>
 ```
 
 * Faire en sorte d'avoir au moins un message d'erreur et d'afficher le contenu HTML de la page pour examiner l'absence de rendu obtenu de la zone de récapitulatif de l'inscription.
 
-Vous aurez surement constaté que le code précédent n'est pas complet, il manque de nombreuses moustaches `{{ }}` pour afficher les valeurs des propriétés. Nous ne pouvions pas le réaliser plus tôt, car il ne fallait pas que le rendu de la zone de récapitulatif de l'inscription soit réalisé. En effet, de nombreuses propriétés ne sont pas encore valuées, par exemple pour `lodging` et `fees` qui peuvent être `null`.
+Vous aurez surement constaté que le code précédent n'est pas complet, il manque de nombreuses moustaches `{{ }}` pour afficher les valeurs des propriétés. Nous ne pouvions pas le réaliser plus tôt, car il ne fallait pas que le rendu de la zone de récapitulatif de l'inscription soit réalisé. En effet, de nombreuses propriétés ne sont pas encore valuées, par exemple pour `registration.lodging` et `registration.fees` qui peuvent être `null`.
 
 * En considérant le rendu présenté sur la figure suivante, compléter le code du fichier _index.html_ en utilisant exclusivement des interpolations de texte via la notation moustache `{{ }}`.
 
