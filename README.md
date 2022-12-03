@@ -6,7 +6,7 @@ Une grande partie du code HTML et JavaScript vous sera donnée comme support dan
 
 **Buts pédagogiques** : référencer la bibliothèque [Vue.js](https://vuejs.org/), interpolation de texte, écriture moustache `{{ }}`, directives `v-text`, `v-model`, `v-once`, `v-for`, `v-bind`, `v-on`, `v-show` et `v-if`, manipulation de propriétés et utilisation de l'outil **Vue-DevTools** pour analyser l'état de ces propriétés.
 
-> Ce dépôt est utilisé dans le cadre d'un cours sur le développement d'applications web que je dispense  en français à l'[ISAE-ENSMA](https://www.ensma.fr) pour les étudiants en dernière année du cycle d'ingénieur qui suivent l'option informatique. Tous les supports de cours et tutoriaux sont disponibles sur ma page Developpez.com : [https://mbaron.developpez.com](https://mbaron.developpez.com/#page_web) et sur ma page personnelle : [https://mickael-baron.fr/](https://mickael-baron.fr/).
+> Ce dépôt est utilisé dans le cadre d'un cours sur le développement d'applications web que je dispense  en français à l'[ISAE-ENSMA](https://www.ensma.fr) pour les étudiants en dernière année du cycle d'ingénieur qui suivent l'option informatique. Tous les supports de cours et tutoriaux sont disponibles sur ma page personnelle : [https://mickael-baron.fr/](https://mickael-baron.fr/).
 
 ## Prérequis logiciels
 
