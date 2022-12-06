@@ -25,7 +25,7 @@ Ce formulaire d'inscription affiche trois zones distinctes, à savoir : la zone 
 ```html
 <body>
     <script src="https://unpkg.com/vue@3"></script>
-    <div class="container">
+    <div class="container" style="max-width: 960px;">
         ...
     </div>
 </body>
@@ -71,7 +71,7 @@ Cet extrait de code contient trois informations.
 ...
 <body>
     <script src="https://unpkg.com/vue@3"></script>
-    <div id="app" class="container">
+    <div id="app" class="container" style="max-width: 960px;">
         ...
     </div>
     <script src="index.js"></script>
@@ -87,8 +87,8 @@ Nous souhaitons maintenant afficher le titre de la conférence dont la valeur es
 ```html
 ...
 <body>
-    <div id="app" class="container">
-        <h1>Formulaire d'inscription pour {{ title }}</h1>
+    <div id="app" class="container" style="max-width: 960px;">
+        <h2>Inscription pour </h2>
         ...
     </div>
     ...
