@@ -34,6 +34,7 @@ createApp({
                 lodging: null
             }
         )
+        return { title, registration }
     }
 }).mount('#app');
 ```
