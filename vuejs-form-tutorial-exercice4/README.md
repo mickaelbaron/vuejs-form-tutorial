@@ -24,7 +24,8 @@ Nous allons vouloir afficher la zone d'erreurs, celle qui liste les champs de sa
             <li v-for="error in errors">{{ error }}</li>
         </ul>
     </div>
-</div>```
+</div>
+```
 
 L'expression contenue dans la directive retourne vraie quand la taille du tableau n'est pas vide. Quoi qu'il en soit, le rendu de l'élément `<div>` est réalisé, mais sera masqué par une permutation CSS. Nous allons examiner cela par une petite expérimentation.
 
