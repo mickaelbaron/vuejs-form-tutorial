@@ -58,7 +58,7 @@ Nous présentons ci-dessous les différentes syntaxes que vous pourrez retrouver
 <h4 class="mb-3">Quelle inscription souhaitez-vous ?</h4>
 <div class="form-check" v-for="val in feesConfig">
     <input class="form-check-input" type="radio" name="feesRadios"
-        v-bind:id="'feesradios'+val.value" v-bind:value="val" v-model="registration.fees">
+        v-bind:id="'feesradios'+val.value" v-bind:value="val.value" v-model="registration.fees">
     <label class="form-check-label" :for="'feesradios'+val.value">
         {{ val.text }} ({{ val.price }} EUR)
     </label>
