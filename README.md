@@ -33,7 +33,7 @@ L'affichage des erreurs est constitué d'une liste d'éléments pour chaque info
 
 ![Récapitulatif de l'inscription](./images/checked_registration_form.png "Récapitulatif de l'inscription")
 
-Le récapitulatif de l'inscription permet de résumer les données saisies et de calculer le montant total que le participant devra régler. Ce montant total est calculé sur la base du type d'inscription et si le participant souhaite que la conférence scientifique prenne en charge son hébergement. Lors de l'affichage de ce récapitulatif les zones de saisie sont désactivées. Le participant doit cliquer sur le bouton **Modifier les données** pour éditer ses informations qui seront re-activées (retour à l'état précédent). Pour confirmer son inscription, le participant doit cliquer sur le bouton **Confirmer**. Les informations sont alors envoyées sur un serveur pour traitement. Cet envoi ne sera pas traitée par cette série d'exercices.
+Le récapitulatif de l'inscription permet de résumer les données saisies et de calculer le montant total que le participant devra régler. Ce montant total est calculé sur la base du type d'inscription et si le participant souhaite que la conférence scientifique prenne en charge son hébergement. Lors de l'affichage de ce récapitulatif les zones de saisie sont désactivées. Le participant doit cliquer sur le bouton **Modifier les données** pour éditer ses informations qui seront re-activées (retour à l'état précédent). Pour confirmer son inscription, le participant doit cliquer sur le bouton **Confirmer**. Les informations sont alors envoyées sur un serveur pour traitement. Cet envoi ne sera pas traité par cette série d'exercices.
 
 ## Ressources
 
