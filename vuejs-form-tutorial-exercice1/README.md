@@ -82,7 +82,7 @@ Cet extrait de code contient trois informations.
 
 Nous souhaitons maintenant afficher le titre de la conférence dont la valeur est donnée par la propriété `title`. 
 
-* Depuis le fichier _index.html_, compléter le contenu de la balise `<h1>` en utilisant une interpolation de texte via la notation moustache `{{ }}`.
+* Depuis le fichier _index.html_, compléter le contenu de la balise `<h2>` en utilisant une interpolation de texte via la notation moustache `{{ }}`.
 
 ```html
 ...
