@@ -22,7 +22,7 @@ createApp({
                 email: 'baron@ensma.fr',
                 firstName: 'Mickael',
                 familyName: 'BARON',
-                sexe: 'female',
+                sexe: 'male',
                 institution: 'ISAE-ENSMA',
                 address: 'Téléport 2 - 1 avenue Clément Ader, BP 40109',
                 zipCode: '86961',
@@ -64,7 +64,7 @@ createApp({
 
 Vous pouvez également modifier la valeur de la propriété `title` utilisée dans le premier exercice pour illustrer l'interpolation de texte. Toutefois, on peut vouloir bloquer sa modification après le premier rendu car il n'y a pas de nécessité à ce que sa valeur change.
 
-* Modifier le fichier _index.html_ en ajoutant la directive `v-once` comme attribut à la balise `<h1>`.
+* Modifier le fichier _index.html_ en ajoutant la directive `v-once` comme attribut à la balise `<h2>`.
 
 ```html
 ...
