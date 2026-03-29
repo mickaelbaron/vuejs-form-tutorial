@@ -18,7 +18,7 @@ Ce formulaire d'inscription affiche trois zones distinctes, à savoir : la zone 
 
 * Démarrer l'éditeur de code [Visual Studio Code](https://code.visualstudio.com/) et éditer le contenu du fichier _index.html_. Vous remarquerez le code HTML et les classes et sélecteurs CSS spécifiques à [Bootstrap](https://getbootstrap.com/) (exemple : `class="row g-3"`).
 
-* Pour ajouter une dépendance vers la bibliothèque [Vue.js](https://vuejs.org/), ajouter en dernière instruction de la balise `<body>` le lien suivant : https://unpkg.com/vue@3.
+* Pour ajouter une dépendance vers la bibliothèque [Vue.js](https://vuejs.org/), ajouter en première instruction de la balise `<body>` le lien suivant : https://unpkg.com/vue@3.
 
 > Ce lien fournit la dernière version courante de [Vue.js](https://vuejs.org/) (si vous desirez utiliser une version spécifique, veuillez vous rendre sur le site de [jsdelivr](https://www.jsdelivr.com/package/npm/vue)).
 
